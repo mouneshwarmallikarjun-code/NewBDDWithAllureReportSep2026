@@ -1,0 +1,43 @@
+# Maven
+target/
+*.jar
+*.war
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.classpath
+*.project
+*.settings/
+*.DS_Store
+
+# Test Reports
+test-output/
+reports/
+
+# Logs
+*.log
+logs/
+
+# Eclipse
+bin/
+.classpath
+.project
+
+# Others
+.class
+*.swp
+*.swo
+*~
+.env
+.env.local
+

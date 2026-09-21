@@ -1,0 +1,1 @@
+{"uuid":"0c02a3fb-0fa3-494e-9de3-0d72a2524084","children":["529f0227-dcba-4d5f-8a5f-54557fb7f53b"],"befores":[{"name":"com.orangehrm.hooks.Hooks.setUp(io.cucumber.java.Scenario)","status":"passed","statusDetails":{"known":false,"muted":false,"flaky":false},"stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1789992937751,"stop":1789992949356}],"afters":[]}

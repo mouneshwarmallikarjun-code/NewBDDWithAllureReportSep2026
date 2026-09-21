@@ -21,7 +21,7 @@ Feature: OrangeHRM Login Functionality
     And User clicks the login button
     Then User should see an error message "Invalid credentials"
 
-  @Smoke @Login_BlankUsername
+  @Smoke @Login_BlankUsername @Regression
   Scenario: User should see error when username is blank
     When User enters username as ""
     And User enters password as "admin"

@@ -7,16 +7,12 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import io.qameta.allure.Allure;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.ByteArrayInputStream;
 import java.time.Duration;
-
-//import static com.orangehrm.utils.DriverManager.driver;
 
 public class Hooks {
     
@@ -48,45 +44,10 @@ public class Hooks {
         
         System.out.println("============ Browser Started & URL Navigated ============");
     }
-    
-    /**
-     * This method will execute after each scenario
-     */
-//    @After
-//    public void tearDown(Scenario scenario) {
-//        System.out.println("============ Closing Browser ============");
-//
-//        /*WebDriver driver = null;
-//        if (driver != null) {
-//            byte[] screenshot = ScreenshotUtils.takeScreenshot(driver);
-//
-//            if (scenario.isFailed()) {
-//                // Attaches directly to the scenario in the Cucumber report
-//                scenario.attach(screenshot, "image/png", "Failure Screenshot");
-//            }
-//
-//            // Also attach via Allure API (shows nicely under "Attachments")
-//            Allure.attachment(
-//                    scenario.getName() + " - Screenshot",
-//                    new ByteArrayInputStream(screenshot)
-//            );
-//
-//            driver.quit();
-//        }*/
-//
-//        WebDriver driver = DriverManager.getDriver();
-//        if (driver != null) {
-//            if (scenario.isFailed()) {
-//                byte[] screenshot = ScreenshotUtils.takeScreenshot(driver);
-//                scenario.attach(screenshot, "image/png", scenario.getName());
-//            }
-//            driver.quit();
-//        }
-//
-//        //DriverManager.closeDriver();
-//        System.out.println("============ Browser Closed ============");
-//    }
 
+    /**
+     * This method will execute after each step
+     */
     @AfterStep
     public void afterStep(Scenario scenario) {
         WebDriver driver = DriverManager.getDriver();
@@ -99,10 +60,14 @@ public class Hooks {
     }
 
     @After
-    public void afterScenario(Scenario scenario) {
+    /**
+     * This method will execute after each scenario
+     */
+    public void afterScenario() {
         WebDriver driver = DriverManager.getDriver();
         if (driver != null) {
             driver.quit();
+            System.out.println("============ Browser Closed ============");
         }
     }
 }

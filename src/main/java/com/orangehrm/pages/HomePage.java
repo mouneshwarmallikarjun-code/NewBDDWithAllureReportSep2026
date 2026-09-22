@@ -18,14 +18,17 @@ public class HomePage {
     private final By userDropdown = By.cssSelector(".oxd-userdropdown");
     private final By topBar = By.cssSelector(".oxd-topbar");
     private final By breadcrumbHeading = By.cssSelector(".oxd-topbar-header-breadcrumb h6");
+    private final By dashboardHeading = By.xpath("//h6[text()='Dashboard']");
+    private final By upgradeBtn = By.xpath("//button[text()=' Upgrade']");
 
-    @FindBy(css = ".oxd-userdropdown")
-    private WebElement userDropdownElement;
+//    @FindBy(css = ".oxd-userdropdown")
+//    private WebElement userDropdownElement;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
+//
 
     /**
      * Check if home page (dashboard) is displayed after a successful login.
@@ -52,10 +55,22 @@ public class HomePage {
      */
     public String getDashboardHeadingText() {
         try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(breadcrumbHeading)).getText();
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardHeading)).getText();
         } catch (Exception e) {
             System.out.println("Error getting dashboard heading text: " + e.getMessage());
             return "";
+        }
+    }
+
+    /*  *
+     * Check if the "Upgrade" button is displayed on the dashboard.
+     */
+    public boolean isUpgradeButtonDisplayed() {
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(upgradeBtn)).isDisplayed();
+        } catch (Exception e) {
+            System.out.println("Upgrade button NOT displayed: " + e.getMessage());
+            return false;
         }
     }
 }

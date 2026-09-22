@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com.orangehrm.hooks", "com.orangehrm.stepdefinitions"},
-        tags = "@Login_Invalid",
+        tags = "@Regression1",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",

@@ -7,7 +7,7 @@ Feature: OrangeHRM Login Functionality
   Background:
     Given User is on the login page
 
-  @Smoke @Login_Valid
+  @Smoke @Login_Valid @Regression1
   Scenario: User should be able to login with valid credentials
     When User enters username as "Admin"
     And User enters password as "admin123"

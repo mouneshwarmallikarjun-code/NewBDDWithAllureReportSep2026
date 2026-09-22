@@ -28,4 +28,16 @@ Feature: OrangeHRM Login Functionality
     And User clicks the login button
     Then User should see an error message "Required"
 
+  @Regression @Login_InvalidData
+  Scenario Outline: Validate login functionality with invalid credentials
+    When User enters username as "<username>"
+    And User enters password as "<password>"
+    And User clicks the login button
+    Then User should see an error message "Invalid credentials"
+
+    Examples: #Ctrl+ALT+Shift+L format
+      | username    | password        |
+      | InvalidUser | InvalidPassword |
+      | admin       | InvalidPassword |
+      | InvalidUser | admin           |
 

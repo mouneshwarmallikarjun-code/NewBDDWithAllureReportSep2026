@@ -35,7 +35,7 @@ Feature: OrangeHRM Login Functionality
     And User clicks the login button
     Then User should see an error message "Invalid credentials"
 
-    Examples: #Ctrl+ALT+Shift+L format
+    Examples:                               #Ctrl+ALT+Shift+L format
       | username    | password        |
       | InvalidUser | InvalidPassword |
       | admin       | InvalidPassword |
